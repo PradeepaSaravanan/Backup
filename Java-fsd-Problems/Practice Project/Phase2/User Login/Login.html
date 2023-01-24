@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login page</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+box-sizing: border-box;
+}
+h1
+{
+text-align:center;
+
+color:Tomato;
+}
+
+button {
+background-color: #04AA6D;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+}
+
+button:hover {
+opacity: 0.8;
+}
+
+.cancelbutton {
+width: auto;
+padding: 10px 18px;
+background-color: #f44336;
+}
+
+.container {
+padding: 16px;
+}
+
+
+
+@media screen and (max-width: 300px) {
+
+
+}
+</style>
+
+<script type="text/javascript">
+function ValidateEmail(emailId)
+{
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if(emailId.value.match(mailformat))
+	{
+		document.getElementById('password').focus();
+		return true;
+	}
+	else
+	{
+		alert("You have entered an invalid email address!");
+		document.getElementById('emailId').focus();
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+
+<h1 >Welcome to home page!!!!</h1>
+<form action="Login" onclick="ValidateEmail(document.getElementById('emailId'))">
+		<div class="container">
+	<label for="username"><b>Email</b></label>
+	<input type="text"  name="username" id = "emailId" required><br><br>
+
+	<label for="password"><b>Password</b></label>
+	<input type="password" name="password" id="password" required><br><br>
+		
+	<button type="submit">Login</button><br><br>
+	<label>
+	<input type="checkbox" checked="checked" name="rememberme"> Remember me<br><br>
+	</label>
+   
+</form>
+
+
+<a href='LogoutSuccess'>Logout</a>
+</body>
+</html>
